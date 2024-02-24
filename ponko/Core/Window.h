@@ -7,32 +7,33 @@
 
 #include "SDL.h"
 
-namespace PonkoEnv
-{
-	class PK_Window
+#ifndef WINDOW_H
+#define WINDOW_H
+	namespace PonkoEnv
 	{
-	public:
-		PK_Window(PK_Window const&) = delete;
-		
-		// Getters 
-		static PK_Window& GetInstance();
-		SDL_Window* GetSDLWindow();
+		class PK_Window
+		{
+		public:
+			PK_Window(PK_Window const&) = delete;
+			PK_Window& operator= (PK_Window const&) = delete;
 
-		// helpers
-		void ConstructWindow(const char* _title,
-								int const& _width, int const& _height);
+			static PK_Window& Get();
+			SDL_Window* GetSDLWindow();
 
-	private:
-		PK_Window(){};
+			void ConstructWindow(const char* _title,
+				int const& _width, int const& _height);
 
-		const char* m_windowTitle{};
-		int m_windowWidth{};
-		int	m_windowHeight{};
-		bool m_fullscreen{};
+		private:
+			PK_Window() {};
 
-		SDL_Window* sdl_Window;
+			const char* m_windowTitle{};
+			int m_windowWidth{};
+			int	m_windowHeight{};
+			bool m_fullscreen{};
 
-		static PK_Window s_Instance;
-	};
+			SDL_Window* sdl_Window;
+		};
 
-}
+	}
+#endif // !WINDOW_H
+

@@ -8,8 +8,9 @@
 #include "pch.h"
 #include "Window.h"
 
-PonkoEnv::PK_Window& PonkoEnv::PK_Window::GetInstance()
+PonkoEnv::PK_Window& PonkoEnv::PK_Window::Get()
 {
+	static PK_Window s_Instance;
 	return s_Instance;
 }
 

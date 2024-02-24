@@ -8,8 +8,8 @@
 #include "pch.h"
 #include "PonkoEngine.h"
 #include "Window.h"
+#include "../GameState/GameStateManager.h"
 
-PonkoEnv::PK_Window PonkoEnv::PK_Window::s_Instance;
 SDL_Window* window{};
 
 namespace PonkoEnv
@@ -17,27 +17,21 @@ namespace PonkoEnv
 	void PonkoEngine::Init()
 	{
 		SDL_Init(SDL_INIT_EVERYTHING);
+		GameStateManager::Init();
 
-		PonkoEnv::PK_Window::GetInstance().ConstructWindow("Help", 800, 600);
-		window = PonkoEnv::PK_Window::GetInstance().GetSDLWindow();
+		// Create Window
+		PonkoEnv::PK_Window::Get().ConstructWindow("Help", 800, 600);
+		window = PonkoEnv::PK_Window::Get().GetSDLWindow();
 	}
 
 	void PonkoEngine::Update()
 	{
-		SDL_Renderer* render = SDL_CreateRenderer(window, -1, 0);
-
-		SDL_SetRenderDrawColor(render, 255, 255, 255, 255);
-
-		SDL_RenderClear(render);
-
-		SDL_RenderPresent(render);
-
-		SDL_Delay(900);
+		GameStateManager::Update();
 	}
 
 	void PonkoEngine::Terminate()
 	{
-
+		GameStateManager::Terminate();
 	}
 }
 
