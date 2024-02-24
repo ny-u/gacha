@@ -2,6 +2,7 @@
 
 // STD Lib
 #include <iostream>
+#include <string>
 
 // SDL2
 #include "SDL.h"
