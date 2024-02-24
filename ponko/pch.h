@@ -1,6 +1,9 @@
 #pragma once
 
+// STD Lib
 #include <iostream>
+
+// SDL2
 #include "SDL.h"
 #include "SDL_image.h"
 #include "SDL_ttf.h"

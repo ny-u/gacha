@@ -46,6 +46,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(SolutionDir)vendor\SDL2\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)vendor\SDL2\x64;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+    <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
+    <TargetName>$(ProjectName)bin</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
+    <TargetName>$(ProjectName)bin</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -63,9 +69,7 @@
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy "$(SolutionDir)vendor\SDL2\x64\SDL2.dll" "$(TargetDir)" /y
-xcopy "$(SolutionDir)vendor\SDL2\x64\SDL2_image.dll" "$(TargetDir)" /y
-xcopy "$(SolutionDir)vendor\SDL2\x64\SDL2_ttf.dll" "$(TargetDir)" /y</Command>
+      <Command>xcopy "$(SolutionDir)vendor\SDL2\x64\SDL2.dll" "$(TargetDir)" /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -83,8 +87,12 @@ xcopy "$(SolutionDir)vendor\SDL2\x64\SDL2_ttf.dll" "$(TargetDir)" /y</Command>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)vendor\SDL2\x64\SDL2.dll" "$(TargetDir)" /y</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Core\PonkoEngine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -93,6 +101,7 @@ xcopy "$(SolutionDir)vendor\SDL2\x64\SDL2_ttf.dll" "$(TargetDir)" /y</Command>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Core\PonkoEngine.h" />
     <ClInclude Include="pch.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>

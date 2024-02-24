@@ -1,10 +1,17 @@
+/**
+* @author: weijie
+* @date: 25 feb 2024
+* @brief: main 
+*/
+
 #include "pch.h"
+#include "Core/PonkoEngine.h"
 
 int main(int argc, char** argv)
 {
-	SDL_Init(SDL_INIT_VIDEO);
-	IMG_Init(IMG_INIT_PNG);
-	TTF_Init();
+	PonkoEnv::PonkoEngine::Init();
+	PonkoEnv::PonkoEngine::Update();
+	PonkoEnv::PonkoEngine::Terminate();
 
 	return 0;
 }
