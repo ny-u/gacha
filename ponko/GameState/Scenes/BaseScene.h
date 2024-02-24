@@ -5,8 +5,8 @@
 * @brief: BaseScene to be used in game state
 */
 
-#ifndef BASESCENE_H
-#define BASESCENE_H
+#ifndef PK_BASESCENE_H
+#define PK_BASESCENE_H
 	namespace PonkoEnv
 	{
 		class BaseScene
@@ -20,6 +20,6 @@
 			virtual void Unload() = 0;
 		};
 	}
-#endif // !BASESCENE_H
+#endif // !PK_BASESCENE_H
 
 

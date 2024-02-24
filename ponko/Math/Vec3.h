@@ -6,8 +6,8 @@
 */
 
 
-#ifndef VEC3_H
-#define VEC3_H
+#ifndef PK_VEC3_H
+#define PK_VEC3_H
 
 #include <ostream>
 
@@ -223,6 +223,6 @@ std::ostream& operator<<(std::ostream& lhs, Vec3<T> const& rhs)
 	return lhs;
 }
 
-#endif // !Vec3_H
+#endif // !PK_VEC3_H
 
 

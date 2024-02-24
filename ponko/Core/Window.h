@@ -7,8 +7,8 @@
 
 #include "SDL.h"
 
-#ifndef WINDOW_H
-#define WINDOW_H
+#ifndef PK_WINDOW_H
+#define PK_WINDOW_H
 	namespace PonkoEnv
 	{
 		class PK_Window
@@ -35,5 +35,5 @@
 		};
 
 	}
-#endif // !WINDOW_H
+#endif // !PK_WINDOW_H
 

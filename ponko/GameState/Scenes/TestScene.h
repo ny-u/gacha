@@ -1,12 +1,12 @@
 /**
-* @file: BaseScene.h
+* @file: TestScene.h
 * @author: weijie
 * @date: 24 feb 2024
-* @brief: BaseScene to be used in game state
+* @brief: testing GSM
 */
 
-#ifndef TESTSCENE_H
-#define TESTSCENE_H
+#ifndef PK_TESTSCENE_H
+#define PK_TESTSCENE_H
 #include "BaseScene.h"
 	namespace PonkoEnv
 	{
@@ -20,4 +20,4 @@
 			void Unload() override;
 		};
 	}
-#endif // !TESTSCENE_H
+#endif // !PK_TESTSCENE_H

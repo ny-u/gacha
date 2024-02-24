@@ -5,8 +5,8 @@
 * @brief: starting point of the game
 */
 
-#ifndef PONKOENGINE_H
-#define PONKOENGINE_H
+#ifndef PK_PONKOENGINE_H
+#define PK_PONKOENGINE_H
 
 namespace PonkoEnv
 {
@@ -24,5 +24,5 @@ namespace PonkoEnv
 }
 
 
-#endif // !PONKOENGINE_H
+#endif // !PK_PONKOENGINE_H
 
