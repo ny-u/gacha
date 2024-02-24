@@ -6,8 +6,7 @@
 */
 
 #include "pch.h"
-#include "TestScene.h"
-
+#include "AllScenes.h"
 
 void PonkoEnv::TestScene::Load()
 {
@@ -26,6 +25,9 @@ void PonkoEnv::TestScene::Update()
 
 void PonkoEnv::TestScene::Render()
 {
+	std::cout << "testsnce\n";
+	GameStateManager::SetNextScene(SCENE_SPLASHSCREEN);
+	/*
 	SDL_Window* window = PonkoEnv::PK_Window::Get().GetSDLWindow();
 	SDL_Renderer* render = SDL_CreateRenderer(window, -1, 0);
 
@@ -36,6 +38,8 @@ void PonkoEnv::TestScene::Render()
 	SDL_RenderPresent(render);
 
 	SDL_Delay(900);
+	*/
+
 }
 
 void PonkoEnv::TestScene::Free()

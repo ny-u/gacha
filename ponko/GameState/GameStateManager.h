@@ -15,6 +15,7 @@
 		{
 			GSM_NULL,
 			SCENE_SPLASHSCREEN,
+			SCENE_TEST,
 			GSM_QUIT,
 			GSM_RESTART
 		};
@@ -41,6 +42,9 @@
 			static GSM_STATES& SetNext() { return Get().I_SetNext(); }
 
 			static BaseScene*& ScenePtr() { return Get().I_ScenePtr(); }
+
+			static void SetNextScene(GSM_STATES _state);
+			static void Quit();
 
 		private:
 			GameStateManager() {};

@@ -6,9 +6,9 @@
 */
 
 #include "pch.h"
-#include "GameStateManager.h"
 #include "../Core/Window.h"
-#include "Scenes/TestScene.h"
+#include "Scenes/AllScenes.h"
+
 
 PonkoEnv::GameStateManager& PonkoEnv::GameStateManager::Get()
 {
@@ -65,4 +65,25 @@ void PonkoEnv::GameStateManager::Update()
 void PonkoEnv::GameStateManager::Terminate()
 {
 	delete GameStateManager::ScenePtr();
+}
+
+void PonkoEnv::GameStateManager::SetNextScene(GSM_STATES _state) // this is horrible
+{
+	delete GameStateManager::ScenePtr();
+	switch (_state)
+	{
+	case SCENE_SPLASHSCREEN:
+		GameStateManager::ScenePtr() = new SplashScreenScene;
+		break;
+	case SCENE_TEST:
+		GameStateManager::ScenePtr() = new TestScene;
+		break;
+	default:
+		break;
+	}
+}
+
+void PonkoEnv::GameStateManager::Quit() // this is horrible
+{
+	SetNext() = GSM_QUIT;
 }

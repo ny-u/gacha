@@ -102,6 +102,7 @@
     <ClCompile Include="Core\PonkoEngine.cpp" />
     <ClCompile Include="Core\Window.cpp" />
     <ClCompile Include="GameState\GameStateManager.cpp" />
+    <ClCompile Include="GameState\Scenes\SplashScreen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -113,6 +114,7 @@
   <ItemGroup>
     <ClInclude Include="Core\PonkoEngine.h" />
     <ClInclude Include="Core\Window.h" />
+    <ClInclude Include="GameState\Scenes\AllScenes.h" />
     <ClInclude Include="GameState\Scenes\BaseScene.h" />
     <ClInclude Include="GameState\GameStateManager.h" />
     <ClInclude Include="pch.h">
@@ -121,6 +123,7 @@
     </ClInclude>
     <ClInclude Include="Math\Vec3.h" />
     <ClInclude Include="GameState\Scenes\TestScene.h" />
+    <ClInclude Include="GameState\Scenes\SplashScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
