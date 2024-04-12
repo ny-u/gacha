@@ -7,7 +7,7 @@
 
 #include "pch.h"
 #include "PonkoEngine.h"
-#include "../GameState/GameStateManager.h"
+#include "GameState/GameStateManager.h"
 
 SDL_Window* window{};
 

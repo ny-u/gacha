@@ -6,7 +6,7 @@
 */
 
 #include "pch.h"
-#include "../Core/Window.h"
+#include "Core/Window.h"
 #include "Scenes/AllScenes.h"
 
 
