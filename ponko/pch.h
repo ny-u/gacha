@@ -14,6 +14,8 @@
 
 // Core
 #include "Core/Window.h"
+#include "Core/InputHandler.h"
+
 
 // GSM
 #include "GameState/GameStateManager.h"

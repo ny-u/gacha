@@ -25,6 +25,7 @@ namespace PonkoEnv
 
 	void PonkoEngine::Update()
 	{
+		SDL_PollEvent(PonkoEnv::InputHandler::Get());
 		GameStateManager::Update();
 	}
 

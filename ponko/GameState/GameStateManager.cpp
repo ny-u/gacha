@@ -19,12 +19,12 @@ PonkoEnv::GameStateManager& PonkoEnv::GameStateManager::Get()
 void PonkoEnv::GameStateManager::Init()
 {
 	// Init Scene
-	GSM_STATES StartScene = SCENE_SPLASHSCREEN;
+	GSM_STATES StartScene			= SCENE_SPLASHSCREEN;
 	GameStateManager::SetCurrent()  = GameStateManager::SetPrevious()
 									= GameStateManager::SetNext()
 									= StartScene;
 
-	GameStateManager::ScenePtr() = new TestScene;
+	GameStateManager::ScenePtr() = new SplashScreenScene;
 }
 
 void PonkoEnv::GameStateManager::Update()
@@ -67,9 +67,9 @@ void PonkoEnv::GameStateManager::Terminate()
 	delete GameStateManager::ScenePtr();
 }
 
-void PonkoEnv::GameStateManager::SetNextScene(GSM_STATES _state) // this is horrible
+void PonkoEnv::GameStateManager::SetNextScene(GSM_STATES _state) // this is horrible i think?
 {
-	delete GameStateManager::ScenePtr();
+	delete GameStateManager::ScenePtr(); // dis line
 	switch (_state)
 	{
 	case SCENE_SPLASHSCREEN:
