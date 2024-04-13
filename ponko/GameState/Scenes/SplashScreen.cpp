@@ -41,7 +41,6 @@ void PonkoEnv::SplashScreenScene::Update()
 		std::cout << "Hey Touching Box is expensive!\n";
 		GameStateManager::SetNextScene(SCENE_TEST);
 	}
-		
 	
 	// Update player's position
 	Player.getComponent<TransformComp>().m_pos = PonkoEnv::InputHandler::Get().WindowCursor();
