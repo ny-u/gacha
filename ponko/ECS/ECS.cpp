@@ -7,19 +7,6 @@
 #include "pch.h"
 #include "ECS.h"
 
-// Entity Class
-void Entity::Update()
-{
-	// Removing the "system" part of ecs and using it as data storage for now
-	//for (auto& c : l_components) c->Update();
-	//for (auto& c : l_components) c->Draw();
-}
-
-void Entity::Draw()
-{
-
-}
-
 void Entity::Destroy()
 {
 	b_active = false;
@@ -37,23 +24,12 @@ EntityManager& EntityManager::Get()
 	return s_Instance;
 }
 
-void EntityManager::Update()
-{
-	for (auto& e : l_entities) e->Update();
-}
-
-void EntityManager::Draw()
-{
-	for (auto& e : l_entities) e->Draw();
-}
-
 void EntityManager::CleanUp()
 {
 	l_entities.erase(std::remove_if(std::begin(l_entities), std::end(l_entities),
-		[](const std::unique_ptr<Entity>& _mEntity)
-		{ return !_mEntity->isActive(); }),
-		std::end(l_entities));
-
+					[](const std::unique_ptr<Entity>& _mEntity)
+					{ return !_mEntity->isActive(); }),
+					std::end(l_entities));
 }
 
 Entity& EntityManager::addEntity()

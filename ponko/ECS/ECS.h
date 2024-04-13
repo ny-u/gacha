@@ -66,9 +66,6 @@ class Entity
 public:
 
 	Entity() {};
-
-	void Update();
-	void Draw();
 	bool isActive() const;
 	void Destroy();
 
@@ -108,7 +105,7 @@ private:
 	bool b_active = true; // check if the entity is alive or not if false can remove the entity
 
 	std::vector<std::unique_ptr<Component>> l_components{};
-	ComponentArray l_comArr{};
+	ComponentArray	l_comArr{};
 	ComponentBitSet l_comBit{};
 };
 
@@ -118,11 +115,9 @@ public:
 	EntityManager(EntityManager const&) = delete;
 	EntityManager& operator=(EntityManager const&) = delete;
 
-	static EntityManager& Get();
+	static	EntityManager& Get();
 
-	void Update();
-	void Draw();
-	void CleanUp();
+	void	CleanUp();
 	Entity& addEntity();
 
 private:

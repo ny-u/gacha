@@ -28,10 +28,10 @@ struct RenderComp : public Component
 	}
 
 	//Vec3<float> m_pos{};
-	Vec3<float> m_widheight{};
-	SDL_Texture* m_texture;
-	SDL_Rect m_srcRect{};
-	SDL_Rect m_dstRect{};
+	Vec3<float>		m_widheight{};
+	SDL_Texture*	m_texture;
+	SDL_Rect		m_srcRect{};
+	SDL_Rect		m_dstRect{};
 
 };
 

@@ -27,13 +27,13 @@
 		private:
 			PK_Window() {};
 
-			const char* m_windowTitle{};
-			int m_windowWidth{};
-			int	m_windowHeight{};
-			bool m_fullscreen{};
+			const char*		m_windowTitle{};
+			int				m_windowWidth{};
+			int				m_windowHeight{};
+			bool			m_fullscreen{};
 
-			SDL_Window* sdl_Window;
-			SDL_Renderer* m_render;
+			SDL_Window*		sdl_Window;
+			SDL_Renderer*	m_render;
 		};
 
 	}

@@ -38,7 +38,7 @@ struct ColliderComp : public Component
 				cursor.y > m_aabb.min_pt.y && cursor.y < m_aabb.max_pt.y;
 	}
 
-	AABB m_aabb{};
+	AABB		m_aabb{};
 };
 
 #endif // !COLLIDERCOMP_H
