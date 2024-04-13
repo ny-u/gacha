@@ -65,6 +65,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(ProjectDir)pch.h</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -88,6 +89,7 @@ xcopy "$(SolutionDir)vendor\SDL2\SDL2_x64\SDL2_ttf.dll" "$(TargetDir)" /y</Comma
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(ProjectDir)pch.h</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,6 +128,7 @@ xcopy "$(SolutionDir)vendor\SDL2\SDL2_x64\SDL2_ttf.dll" "$(TargetDir)" /y</Comma
     <ClInclude Include="Core\InputHandler.h" />
     <ClInclude Include="Core\PonkoEngine.h" />
     <ClInclude Include="Core\Window.h" />
+    <ClInclude Include="ECS\Components\ColliderComp.h" />
     <ClInclude Include="ECS\Components\allComps.h" />
     <ClInclude Include="ECS\Components\RenderComp.h" />
     <ClInclude Include="ECS\Components\TransformComp.h" />

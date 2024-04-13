@@ -101,5 +101,8 @@
     <ClInclude Include="ECS\Components\RenderComp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ECS\Components\ColliderComp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

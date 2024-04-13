@@ -10,5 +10,6 @@
 
 #include "TransformComp.h"
 #include "RenderComp.h"
+#include "ColliderComp.h"
 
 #endif // !ALLCOMPS_H

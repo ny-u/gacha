@@ -33,21 +33,20 @@ void PonkoEnv::TextureManager::Draw(SDL_Texture* _tex, SDL_Rect _srcRect,SDL_Rec
 
 void PonkoEnv::TextureManager::SimpleDraw(SDL_Texture* _tex, Vec3<float> _pos, Vec3<float> _dime)
 {
-	SDL_Rect dstRect{};
-	dstRect.x = _pos.x;
-	dstRect.y = _pos.y;
+	int drawX = static_cast<int>(_pos.x - _dime.x / 4); 
+	int drawY = static_cast<int>(_pos.y - _dime.y / 4); 
 
-	dstRect.h = _dime.x;
-	dstRect.w = _dime.y;
+	SDL_Rect dstRect	= { drawX, drawY, static_cast<int>(_dime.x / 2), static_cast<int>(_dime.y / 2) };
+	SDL_Renderer* rend	= PonkoEnv::PK_Window::Get().GetSDLRender();
 
-	SDL_Renderer* rend = PonkoEnv::PK_Window::Get().GetSDLRender();
 	SDL_RenderCopy(rend, _tex, NULL, &dstRect);
 }
+
 
 void PonkoEnv::TextureManager::SimpleDraw(Entity& _entity)
 {
 	TransformComp trans = _entity.getComponent<TransformComp>();
-	RenderComp rend = _entity.getComponent<RenderComp>();
+	RenderComp rend		= _entity.getComponent<RenderComp>();
 
 	SimpleDraw(_entity.getComponent<RenderComp>().m_texture, _entity.getComponent<TransformComp>().m_pos, _entity.getComponent<RenderComp>().m_widheight);
 }
