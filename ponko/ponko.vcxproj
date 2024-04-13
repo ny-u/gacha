@@ -106,7 +106,9 @@ xcopy "$(SolutionDir)vendor\SDL2\SDL2_x64\SDL2_ttf.dll" "$(TargetDir)" /y</Comma
     <ClCompile Include="Core\FPSController.cpp" />
     <ClCompile Include="Core\InputHandler.cpp" />
     <ClCompile Include="Core\PonkoEngine.cpp" />
+    <ClCompile Include="Core\TextureManager.cpp" />
     <ClCompile Include="Core\Window.cpp" />
+    <ClCompile Include="ECS\ECS.cpp" />
     <ClCompile Include="GameState\GameStateManager.cpp" />
     <ClCompile Include="GameState\Scenes\SplashScreen.cpp" />
     <ClCompile Include="main.cpp" />
@@ -118,11 +120,15 @@ xcopy "$(SolutionDir)vendor\SDL2\SDL2_x64\SDL2_ttf.dll" "$(TargetDir)" /y</Comma
     <ClCompile Include="GameState\Scenes\TestScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Core\TextureManager.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="Core\FPSController.h" />
     <ClInclude Include="Core\InputHandler.h" />
     <ClInclude Include="Core\PonkoEngine.h" />
     <ClInclude Include="Core\Window.h" />
+    <ClInclude Include="ECS\Components\allComps.h" />
+    <ClInclude Include="ECS\Components\TransformComp.h" />
+    <ClInclude Include="ECS\ECS.h" />
     <ClInclude Include="GameState\Scenes\AllScenes.h" />
     <ClInclude Include="GameState\Scenes\BaseScene.h" />
     <ClInclude Include="GameState\GameStateManager.h" />

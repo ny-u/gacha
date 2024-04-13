@@ -26,10 +26,10 @@ namespace PonkoEnv
 		FPSController() {};
 
 		unsigned m_fps{ PK_FPS_CAP };
-		unsigned frameDelay{ PK_FPS_DELAY_PERIOD / m_fps};
+		unsigned m_frameDelay{ PK_FPS_DELAY_PERIOD / m_fps};
 
-		size_t frameStart{};
-		int frameTime{};
+		size_t m_frameStart{};
+		int m_frameTime{};
 	};
 }
 

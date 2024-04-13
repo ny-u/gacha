@@ -25,6 +25,8 @@ void PonkoEnv::GameStateManager::Init()
 									= StartScene;
 
 	GameStateManager::ScenePtr() = new SplashScreenScene;
+
+
 }
 
 void PonkoEnv::GameStateManager::Update()
@@ -52,8 +54,8 @@ void PonkoEnv::GameStateManager::Update()
 			GameStateManager::ScenePtr()->Update();
 			GameStateManager::ScenePtr()->Render();
 
-
 			PonkoEnv::FPSController::Get().End(); // End of FPS Controller
+
 		}
 
 		GameStateManager::ScenePtr()->Free();

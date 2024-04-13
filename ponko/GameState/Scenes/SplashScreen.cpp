@@ -18,9 +18,7 @@ void PonkoEnv::SplashScreenScene::Load()
 {
 	render = SDL_CreateRenderer(PonkoEnv::PK_Window::Get().GetSDLWindow(), -1, 0);
 
-	SDL_Surface* tmpSurface = IMG_Load("assets/test.png");
-	testTex = SDL_CreateTextureFromSurface(render, tmpSurface);
-	SDL_FreeSurface(tmpSurface);
+	testTex = PonkoEnv::TextureManager::Get().LoadTexture("assets/test.png", render);
 }
 
 void PonkoEnv::SplashScreenScene::Init()
@@ -33,6 +31,7 @@ void PonkoEnv::SplashScreenScene::Update()
 	counter++;
 	dstRect.h = 52;
 	dstRect.w = 52;
+
 
 	dstRect.x = counter%800;
 	

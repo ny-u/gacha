@@ -6,9 +6,10 @@
 */
 
 // Window Defines
-#define PK_WINDOW_HEIGHT	800
-#define PK_WINDOW_WIDTH		600
 #define PK_WINDOW_TITLE		"Help"
+#define PK_WINDOW_WIDTH		800
+#define PK_WINDOW_HEIGHT	600
+
 
 // FPS Defines
 #define PK_FPS_CAP			60

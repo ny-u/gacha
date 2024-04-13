@@ -15,13 +15,13 @@ PonkoEnv::FPSController& PonkoEnv::FPSController::Get()
 
 void PonkoEnv::FPSController::Start()
 {
-	frameStart = SDL_GetTicks64();
+	m_frameStart = SDL_GetTicks64();
 }
 
 void PonkoEnv::FPSController::End()
 {
-	frameTime = SDL_GetTicks64() - frameStart;
-	if (frameDelay > frameTime)
-		SDL_Delay(frameDelay - frameTime);
+	m_frameTime = SDL_GetTicks64() - m_frameStart;
+	if (m_frameDelay > m_frameTime)
+		SDL_Delay(m_frameDelay - m_frameTime);
 }
 
