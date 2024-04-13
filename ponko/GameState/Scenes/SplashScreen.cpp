@@ -27,7 +27,7 @@ void PonkoEnv::SplashScreenScene::Update()
 	// Check if the Escape key is triggered
 	if (PonkoEnv::InputHandler::Get().IsMouseButtonTriggered(SDL_BUTTON_LEFT))
 	{
-		std::cout << "Escape key is triggered\n";
+		std::cout << "Escape key is triggered\n" << PonkoEnv::InputHandler::Get().WindowCursor() << '\n';
 	}
 
 	// Update player's position

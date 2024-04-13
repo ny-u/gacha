@@ -7,6 +7,9 @@
 
 #ifndef PK_INPUTHANDLER_H
 #define PK_INPUTHANDLER_H
+
+#include <Math/Vec3.h>
+
 namespace PonkoEnv
 {
 	class InputHandler // Refresher on Singeton Classes
@@ -18,13 +21,19 @@ namespace PonkoEnv
 		static InputHandler& Get();
 		SDL_Event* GetSDLEvent();
 
+		// Check Keyboard Input
 		bool IsKeyTriggered(SDL_Keycode _key);
 		bool IsKeyOnHold(SDL_Keycode _key);
 		bool IsKeyReleased(SDL_Keycode _key);
 
+		// Check Mouse Input
 		bool IsMouseButtonTriggered(Uint8 button);
 		bool IsMouseButtonReleased(Uint8 button);
 		bool IsMouseButtonOnHold(Uint8 button);
+
+		// Check Cursor Pos
+		Vec3<float> WindowCursor();
+		Vec3<float>	GlobalCursor();
 	
 		// Trying out Conversion Operators
 		operator SDL_Event*() { return &m_event; } // Probably unsafe but kool

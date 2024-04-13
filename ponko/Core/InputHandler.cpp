@@ -54,3 +54,17 @@ bool PonkoEnv::InputHandler::IsMouseButtonOnHold(Uint8 button)
 {
     return m_event.type == SDL_MOUSEBUTTONDOWN && m_event.button.button == button;
 }
+
+Vec3<float> PonkoEnv::InputHandler::WindowCursor()
+{
+    int mouseX, mouseY;
+    SDL_GetMouseState(&mouseX, &mouseY);
+    return Vec3<float>(static_cast<float>(mouseX), static_cast<float>(mouseY), 0.0f);
+}
+
+Vec3<float>	PonkoEnv::InputHandler::GlobalCursor()
+{
+    int mouseX, mouseY;
+    SDL_GetGlobalMouseState(&mouseX, &mouseY);
+    return Vec3<float>(static_cast<float>(mouseX), static_cast<float>(mouseY), 0.0f);
+}
