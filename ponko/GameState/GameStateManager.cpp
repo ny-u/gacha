@@ -52,6 +52,9 @@ void PonkoEnv::GameStateManager::Update()
 			// Input
 			SDL_PollEvent(PonkoEnv::InputHandler::Get().GetSDLEvent());
 
+			if (PonkoEnv::InputHandler::Get().GetSDLEvent()->type == SDL_QUIT)
+				GameStateManager::Quit();
+
 			// Scene Loop
 			GameStateManager::ScenePtr()->Update();
 			GameStateManager::ScenePtr()->Render();
