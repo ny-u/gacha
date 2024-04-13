@@ -25,20 +25,11 @@ void PonkoEnv::TestScene::Update()
 
 void PonkoEnv::TestScene::Render()
 {
-	//GameStateManager::SetNextScene(SCENE_SPLASHSCREEN);
-	/*
-	SDL_Window* window = PonkoEnv::PK_Window::Get().GetSDLWindow();
-	SDL_Renderer* render = SDL_CreateRenderer(window, -1, 0);
-
-	SDL_SetRenderDrawColor(render, 255, 255, 255, 255);
+	SDL_Renderer* render = PonkoEnv::PK_Window::Get().GetSDLRender();
 
 	SDL_RenderClear(render);
-
+	SDL_SetRenderDrawColor(render, 155, 55, 55, 255);
 	SDL_RenderPresent(render);
-
-	SDL_Delay(900);
-	*/
-
 }
 
 void PonkoEnv::TestScene::Free()

@@ -36,8 +36,12 @@ void PonkoEnv::SplashScreenScene::Update()
 	if (PonkoEnv::InputHandler::Get().IsKeyTriggered(SDLK_w))
 		std::cout << "W key is triggered\n" << PonkoEnv::InputHandler::Get().WindowCursor() << '\n';
 	
-	if (Box.getComponent<ColliderComp>().AABB_Point(PonkoEnv::InputHandler::Get().WindowCursor()))
+	if (Box.getComponent<ColliderComp>().AABB_Point(PonkoEnv::InputHandler::Get().WindowCursor()) && PonkoEnv::InputHandler::Get().IsMouseButtonTriggered(SDL_BUTTON_LEFT))
+	{
 		std::cout << "Hey Touching Box is expensive!\n";
+		GameStateManager::SetNextScene(SCENE_TEST);
+	}
+		
 	
 	// Update player's position
 	Player.getComponent<TransformComp>().m_pos = PonkoEnv::InputHandler::Get().WindowCursor();
