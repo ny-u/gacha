@@ -127,6 +127,7 @@ xcopy "$(SolutionDir)vendor\SDL2\SDL2_x64\SDL2_ttf.dll" "$(TargetDir)" /y</Comma
     <ClInclude Include="Core\PonkoEngine.h" />
     <ClInclude Include="Core\Window.h" />
     <ClInclude Include="ECS\Components\allComps.h" />
+    <ClInclude Include="ECS\Components\RenderComp.h" />
     <ClInclude Include="ECS\Components\TransformComp.h" />
     <ClInclude Include="ECS\ECS.h" />
     <ClInclude Include="GameState\Scenes\AllScenes.h" />

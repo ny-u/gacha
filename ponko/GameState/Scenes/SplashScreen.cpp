@@ -7,21 +7,15 @@
 
 #include "pch.h"
 #include "AllScenes.h"
-
-SDL_Texture* testTex;
-SDL_Rect srcRect, dstRect;
-SDL_Renderer* render;
 Entity& Player{ EntityManager::Get().addEntity()};
 int counter{};
 
 void PonkoEnv::SplashScreenScene::Load()
 {
-	render = SDL_CreateRenderer(PonkoEnv::PK_Window::Get().GetSDLWindow(), -1, 0);
-
-	testTex = PonkoEnv::TextureManager::Get().LoadTexture("assets/test.png", render);
-
 	Player.addComponent<TransformComp>();
 	Player.getComponent<TransformComp>().GetPos().x = 100;
+	Vec3<float> test {52, 52, 0};
+	Player.addComponent<RenderComp>("assets/test.png", test);
 }
 
 void PonkoEnv::SplashScreenScene::Init()
@@ -31,15 +25,8 @@ void PonkoEnv::SplashScreenScene::Init()
 
 void PonkoEnv::SplashScreenScene::Update()
 {
-	std::cout << Player.getComponent<TransformComp>().GetPos().x << '\n';
 	counter++;
-	dstRect.h = 52;
-	dstRect.w = 52;
-
-
-	dstRect.x = counter%800;
-	
-
+	Player.getComponent<TransformComp>().GetPos().x++;
 	SDL_Event event = *PonkoEnv::InputHandler::Get().GetSDLEvent();
 	if (event.type)
 	{
@@ -49,9 +36,11 @@ void PonkoEnv::SplashScreenScene::Update()
 
 void PonkoEnv::SplashScreenScene::Render()
 {
+	SDL_Renderer* render = PonkoEnv::PK_Window::Get().GetSDLRender();
+
 	SDL_RenderClear(render); // Start
 	SDL_SetRenderDrawColor(render, 55, 55, 55, 255);
-	SDL_RenderCopy(render, testTex, NULL, &dstRect);
+	TextureManager::Get().SimpleDraw(Player.getComponent<RenderComp>().GetTex(), Player.getComponent<TransformComp>().GetPos(), Player.getComponent<RenderComp>().GetWidHeight());
 	SDL_RenderPresent(render); // End
 }
 

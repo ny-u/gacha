@@ -19,6 +19,11 @@ SDL_Window* PonkoEnv::PK_Window::GetSDLWindow()
 	return sdl_Window;
 }
 
+SDL_Renderer* PonkoEnv::PK_Window::GetSDLRender()
+{
+	return m_render;
+}
+
 void PonkoEnv::PK_Window::ConstructWindow(const char* _title,
 						int const& _width, int const& _height)
 {
@@ -31,4 +36,6 @@ void PonkoEnv::PK_Window::ConstructWindow(const char* _title,
 									SDL_WINDOWPOS_CENTERED,
 									m_windowWidth, m_windowHeight,
 									SDL_WINDOW_SHOWN);
+
+	m_render = SDL_CreateRenderer(sdl_Window, -1, 0);
 }

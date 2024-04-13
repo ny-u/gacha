@@ -19,6 +19,7 @@
 
 			static PK_Window& Get();
 			SDL_Window* GetSDLWindow();
+			SDL_Renderer* GetSDLRender();
 
 			void ConstructWindow(const char* _title,
 				int const& _width, int const& _height);
@@ -32,6 +33,7 @@
 			bool m_fullscreen{};
 
 			SDL_Window* sdl_Window;
+			SDL_Renderer* m_render;
 		};
 
 	}

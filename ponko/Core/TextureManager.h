@@ -16,7 +16,9 @@ namespace PonkoEnv
 		TextureManager& operator=(TextureManager const&) = delete;
 
 		static TextureManager& Get();
-		SDL_Texture* LoadTexture(const char* _fileName, SDL_Renderer* _rend);
+		SDL_Texture* LoadTexture(const char* _fileName);
+		static void Draw(SDL_Texture* _tex, SDL_Rect _srcRect, SDL_Rect _dstRect);
+		void SimpleDraw(SDL_Texture* _tex, Vec3<float> _pos, Vec3<float> _dime);
 
 	private:
 		TextureManager() {};

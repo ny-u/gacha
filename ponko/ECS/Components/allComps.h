@@ -9,5 +9,6 @@
 #define ALLCOMPS_H
 
 #include "TransformComp.h"
+#include "RenderComp.h"
 
 #endif // !ALLCOMPS_H
