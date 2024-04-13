@@ -103,6 +103,7 @@ xcopy "$(SolutionDir)vendor\SDL2\SDL2_x64\SDL2_ttf.dll" "$(TargetDir)" /y</Comma
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Core\FPSController.cpp" />
     <ClCompile Include="Core\InputHandler.cpp" />
     <ClCompile Include="Core\PonkoEngine.cpp" />
     <ClCompile Include="Core\Window.cpp" />
@@ -117,6 +118,7 @@ xcopy "$(SolutionDir)vendor\SDL2\SDL2_x64\SDL2_ttf.dll" "$(TargetDir)" /y</Comma
     <ClCompile Include="GameState\Scenes\TestScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Core\FPSController.h" />
     <ClInclude Include="Core\InputHandler.h" />
     <ClInclude Include="Core\PonkoEngine.h" />
     <ClInclude Include="Core\Window.h" />

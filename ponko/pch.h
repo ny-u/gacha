@@ -15,6 +15,7 @@
 // Core
 #include "Core/Window.h"
 #include "Core/InputHandler.h"
+#include "Core/FPSController.h"
 
 
 // GSM
