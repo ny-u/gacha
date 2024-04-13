@@ -39,3 +39,18 @@ bool PonkoEnv::InputHandler::IsKeyReleased(SDL_Keycode _key)
     SDL_Scancode scancode = SDL_GetScancodeFromKey(_key);
     return !keyboardState[scancode] && m_event.type == SDL_KEYUP;
 }
+
+bool PonkoEnv::InputHandler::IsMouseButtonTriggered(Uint8 button)
+{
+    return m_event.type == SDL_MOUSEBUTTONDOWN && m_event.button.button == button;
+}
+
+bool PonkoEnv::InputHandler::IsMouseButtonReleased(Uint8 button)
+{
+    return m_event.type == SDL_MOUSEBUTTONUP && m_event.button.button == button;
+}
+
+bool PonkoEnv::InputHandler::IsMouseButtonOnHold(Uint8 button)
+{
+    return m_event.type == SDL_MOUSEBUTTONDOWN && m_event.button.button == button;
+}

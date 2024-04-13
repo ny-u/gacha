@@ -24,11 +24,8 @@ void PonkoEnv::SplashScreenScene::Init()
 
 void PonkoEnv::SplashScreenScene::Update()
 {
-	// Poll SDL events
-	//SDL_PollEvent(PonkoEnv::InputHandler::Get().GetSDLEvent());
-
 	// Check if the Escape key is triggered
-	if (PonkoEnv::InputHandler::Get().IsKeyReleased(SDLK_ESCAPE))
+	if (PonkoEnv::InputHandler::Get().IsMouseButtonTriggered(SDL_BUTTON_LEFT))
 	{
 		std::cout << "Escape key is triggered\n";
 	}

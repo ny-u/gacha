@@ -22,6 +22,10 @@ namespace PonkoEnv
 		bool IsKeyOnHold(SDL_Keycode _key);
 		bool IsKeyReleased(SDL_Keycode _key);
 
+		bool IsMouseButtonTriggered(Uint8 button);
+		bool IsMouseButtonReleased(Uint8 button);
+		bool IsMouseButtonOnHold(Uint8 button);
+	
 		// Trying out Conversion Operators
 		operator SDL_Event*() { return &m_event; } // Probably unsafe but kool
 
