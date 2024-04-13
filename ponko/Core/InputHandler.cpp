@@ -19,3 +19,23 @@ SDL_Event* PonkoEnv::InputHandler::GetSDLEvent()
 	return &m_event;
 }
 
+bool PonkoEnv::InputHandler::IsKeyTriggered(SDL_Keycode _key)
+{
+    const Uint8* keyboardState = SDL_GetKeyboardState(NULL);
+    SDL_Scancode scancode = SDL_GetScancodeFromKey(_key);
+    return keyboardState[scancode] && m_event.type == SDL_KEYDOWN;
+}
+
+bool PonkoEnv::InputHandler::IsKeyOnHold(SDL_Keycode _key)
+{
+    const Uint8* keyboardState = SDL_GetKeyboardState(NULL);
+    SDL_Scancode scancode = SDL_GetScancodeFromKey(_key);
+    return keyboardState[scancode];
+}
+
+bool PonkoEnv::InputHandler::IsKeyReleased(SDL_Keycode _key)
+{
+    const Uint8* keyboardState = SDL_GetKeyboardState(NULL);
+    SDL_Scancode scancode = SDL_GetScancodeFromKey(_key);
+    return !keyboardState[scancode] && m_event.type == SDL_KEYUP;
+}

@@ -7,6 +7,7 @@
 
 #include "pch.h"
 #include "TextureManager.h"
+#include "ECS/Components/allComps.h" // For TransComp and RenderComp
 
 PonkoEnv::TextureManager& PonkoEnv::TextureManager::Get()
 {
@@ -43,3 +44,10 @@ void PonkoEnv::TextureManager::SimpleDraw(SDL_Texture* _tex, Vec3<float> _pos, V
 	SDL_RenderCopy(rend, _tex, NULL, &dstRect);
 }
 
+void PonkoEnv::TextureManager::SimpleDraw(Entity& _entity)
+{
+	TransformComp trans = _entity.getComponent<TransformComp>();
+	RenderComp rend = _entity.getComponent<RenderComp>();
+
+	SimpleDraw(_entity.getComponent<RenderComp>().m_texture, _entity.getComponent<TransformComp>().m_pos, _entity.getComponent<RenderComp>().m_widheight);
+}

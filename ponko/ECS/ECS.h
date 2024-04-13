@@ -50,9 +50,11 @@ public:
 	// virutal functions are just functions that are meant to be over wrtiten by its child classes
 	// "pure virtual functions" end with "=0" are basically just a indicator that the function does not have function
 	// as virtual functions can have defualt base code
-	virtual void Init() {}
-	virtual void Update() {}
-	virtual void Draw() {}
+	
+	// Commented out for now cuz no real usecase for the way im doing it
+	//virtual void Init() {}
+	//virtual void Update() {}
+	//virtual void Draw() {}
 
 	virtual ~Component() {}
 
@@ -88,7 +90,7 @@ public:
 		l_comArr[GetComponentTypeID<T>()] = c;
 		l_comBit[GetComponentTypeID<T>()] = true;
 
-		c->Init();
+		//c->Init();
 
 		return *c;
 	}

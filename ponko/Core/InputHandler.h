@@ -18,6 +18,10 @@ namespace PonkoEnv
 		static InputHandler& Get();
 		SDL_Event* GetSDLEvent();
 
+		bool IsKeyTriggered(SDL_Keycode _key);
+		bool IsKeyOnHold(SDL_Keycode _key);
+		bool IsKeyReleased(SDL_Keycode _key);
+
 		// Trying out Conversion Operators
 		operator SDL_Event*() { return &m_event; } // Probably unsafe but kool
 

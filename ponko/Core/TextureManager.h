@@ -7,6 +7,9 @@
 
 #ifndef TEXTUREMANAGER_H
 #define TEXTUREMANAGER_H
+
+#include "ECS/ECS.h"
+
 namespace PonkoEnv
 {
 	class TextureManager
@@ -19,6 +22,7 @@ namespace PonkoEnv
 		SDL_Texture* LoadTexture(const char* _fileName);
 		static void Draw(SDL_Texture* _tex, SDL_Rect _srcRect, SDL_Rect _dstRect);
 		void SimpleDraw(SDL_Texture* _tex, Vec3<float> _pos, Vec3<float> _dime);
+		void SimpleDraw(Entity& _entity);
 
 	private:
 		TextureManager() {};

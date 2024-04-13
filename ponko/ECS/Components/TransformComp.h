@@ -11,12 +11,8 @@
 #include "ECS/ECS.h"
 #include "Math/Vec3.h"
 
-class TransformComp : public Component
+struct TransformComp : public Component
 {
-public:
-	Vec3<float>& GetPos() { return m_pos; }
-
-private:
 	Vec3<float> m_pos{};
 };
 

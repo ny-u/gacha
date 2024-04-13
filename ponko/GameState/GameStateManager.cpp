@@ -50,13 +50,11 @@ void PonkoEnv::GameStateManager::Update()
 			PonkoEnv::FPSController::Get().Start(); // Start of FPS Controller
 
 			// Input
+			SDL_PollEvent(PonkoEnv::InputHandler::Get().GetSDLEvent());
 
+			// Scene Loop
 			GameStateManager::ScenePtr()->Update();
-
 			GameStateManager::ScenePtr()->Render();
-
-			
-			
 
 			PonkoEnv::FPSController::Get().End(); // End of FPS Controller
 

@@ -10,8 +10,9 @@
 // Entity Class
 void Entity::Update()
 {
-	for (auto& c : l_components) c->Update();
-	for (auto& c : l_components) c->Draw();
+	// Removing the "system" part of ecs and using it as data storage for now
+	//for (auto& c : l_components) c->Update();
+	//for (auto& c : l_components) c->Draw();
 }
 
 void Entity::Draw()
