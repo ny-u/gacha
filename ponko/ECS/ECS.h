@@ -110,15 +110,21 @@ private:
 	ComponentBitSet l_comBit{};
 };
 
-class Manager
+class EntityManager
 {
 public:
+	EntityManager(EntityManager const&) = delete;
+	EntityManager& operator=(EntityManager const&) = delete;
+
+	static EntityManager& Get();
+
 	void Update();
 	void Draw();
 	void CleanUp();
 	Entity& addEntity();
 
 private:
+	EntityManager() {};
 	std::vector<std::unique_ptr<Entity>> l_entities{};
 };
 

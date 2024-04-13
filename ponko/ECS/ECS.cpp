@@ -30,17 +30,23 @@ bool Entity::isActive() const
 }
 
 // Manager Class
-void Manager::Update()
+EntityManager& EntityManager::Get()
+{
+	static EntityManager s_Instance;
+	return s_Instance;
+}
+
+void EntityManager::Update()
 {
 	for (auto& e : l_entities) e->Update();
 }
 
-void Manager::Draw()
+void EntityManager::Draw()
 {
 	for (auto& e : l_entities) e->Draw();
 }
 
-void Manager::CleanUp()
+void EntityManager::CleanUp()
 {
 	l_entities.erase(std::remove_if(std::begin(l_entities), std::end(l_entities),
 		[](const std::unique_ptr<Entity>& _mEntity)
@@ -49,7 +55,7 @@ void Manager::CleanUp()
 
 }
 
-Entity& Manager::addEntity()
+Entity& EntityManager::addEntity()
 {
 	Entity* e = new Entity();
 	std::unique_ptr<Entity> uPtr{ e };

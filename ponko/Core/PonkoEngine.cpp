@@ -8,8 +8,6 @@
 #include "pch.h"
 #include "PonkoEngine.h"
 #include "GameState/GameStateManager.h"
-Manager manager{};
-Entity& newPlayer{ manager.addEntity() };
 SDL_Window* window{};
 
 namespace PonkoEnv
@@ -22,10 +20,6 @@ namespace PonkoEnv
 		// Create Window
 		PonkoEnv::PK_Window::Get().ConstructWindow(PK_WINDOW_TITLE, PK_WINDOW_WIDTH, PK_WINDOW_HEIGHT);
 		window = PonkoEnv::PK_Window::Get().GetSDLWindow();
-
-		newPlayer.addComponent<TransformComp>();
-		newPlayer.getComponent<TransformComp>().GetPos().x = 100;
-
 	}
 
 	void PonkoEngine::Update()

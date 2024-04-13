@@ -9,7 +9,6 @@
 #include "Core/Window.h"
 #include "Scenes/AllScenes.h"
 
-
 PonkoEnv::GameStateManager& PonkoEnv::GameStateManager::Get()
 {
 	static GameStateManager s_Instance;

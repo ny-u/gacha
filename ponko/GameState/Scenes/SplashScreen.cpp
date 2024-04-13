@@ -11,7 +11,7 @@
 SDL_Texture* testTex;
 SDL_Rect srcRect, dstRect;
 SDL_Renderer* render;
-
+Entity& Player{ EntityManager::Get().addEntity()};
 int counter{};
 
 void PonkoEnv::SplashScreenScene::Load()
@@ -19,6 +19,9 @@ void PonkoEnv::SplashScreenScene::Load()
 	render = SDL_CreateRenderer(PonkoEnv::PK_Window::Get().GetSDLWindow(), -1, 0);
 
 	testTex = PonkoEnv::TextureManager::Get().LoadTexture("assets/test.png", render);
+
+	Player.addComponent<TransformComp>();
+	Player.getComponent<TransformComp>().GetPos().x = 100;
 }
 
 void PonkoEnv::SplashScreenScene::Init()
@@ -28,6 +31,7 @@ void PonkoEnv::SplashScreenScene::Init()
 
 void PonkoEnv::SplashScreenScene::Update()
 {
+	std::cout << Player.getComponent<TransformComp>().GetPos().x << '\n';
 	counter++;
 	dstRect.h = 52;
 	dstRect.w = 52;
