@@ -53,7 +53,7 @@ void PonkoEnv::GameStateManager::Update()
 			GameStateManager::ScenePtr()->Render();
 
 
-			PonkoEnv::FPSController::Get().End();
+			PonkoEnv::FPSController::Get().End(); // End of FPS Controller
 		}
 
 		GameStateManager::ScenePtr()->Free();

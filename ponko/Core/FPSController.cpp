@@ -21,7 +21,6 @@ void PonkoEnv::FPSController::Start()
 void PonkoEnv::FPSController::End()
 {
 	frameTime = SDL_GetTicks64() - frameStart;
-	std::cout << frameTime << '\n';
 	if (frameDelay > frameTime)
 		SDL_Delay(frameDelay - frameTime);
 }

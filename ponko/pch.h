@@ -9,6 +9,9 @@
 #include "SDL_image.h"
 #include "SDL_ttf.h"
 
+// Defines
+#include "Defines.h"
+
 // Math
 #include "Math/Vec3.h"
 

@@ -19,7 +19,7 @@ namespace PonkoEnv
 		GameStateManager::Init();
 
 		// Create Window
-		PonkoEnv::PK_Window::Get().ConstructWindow("Help", 800, 600);
+		PonkoEnv::PK_Window::Get().ConstructWindow(PK_WINDOW_TITLE, PK_WINDOW_WIDTH, PK_WINDOW_HEIGHT);
 		window = PonkoEnv::PK_Window::Get().GetSDLWindow();
 	}
 
