@@ -10,12 +10,20 @@
 
 namespace PonkoEnv
 {
-	Entity& MakeButton(Entity& _entity, Vec3<float> _pos, Vec3<float> _widheight, const char* _filepathImg)
+	Entity& MakeCollider(Entity& _entity, Vec3<float> _pos, Vec3<float> _widheight)
 	{
 		_entity.addComponent<TransformComp>(_pos);
-		_entity.addComponent<RenderComp>(_filepathImg, _widheight);
 		_entity.addComponent<ColliderComp>(AABB(_pos, _widheight));
 
 		return _entity;
 	}
+
+	Entity& MakeButton(Entity& _entity, Vec3<float> _pos, Vec3<float> _widheight, const char* _filepathImg)
+	{
+		MakeCollider(_entity, _pos, _widheight);
+		_entity.addComponent<RenderComp>(_filepathImg, _widheight);
+		return _entity;
+	}
+
+
 }

@@ -25,7 +25,7 @@ void PonkoEnv::WinScreen::Init()
 void PonkoEnv::WinScreen::Update()
 {
 
-	if (PonkoEnv::InputHandler::Get().IsMouseButtonTriggered(SDL_BUTTON_LEFT))
+	if (PonkoEnv::InputHandler::Get().IsKeyTriggered(SDLK_ESCAPE))
 		GameStateManager::SetNextScene(SCENE_MAINMENU);
 	
 }

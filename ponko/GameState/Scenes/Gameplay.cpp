@@ -22,7 +22,7 @@ void PonkoEnv::Gameplay::Load()
 	BG.addComponent<TransformComp>(Vec3<float>(PK_WINDOW_WIDTH / 2, PK_WINDOW_HEIGHT / 2, 0));
 	BG.addComponent<RenderComp>("assets/Gacha.png", Vec3<float>(PK_WINDOW_WIDTH, PK_WINDOW_HEIGHT, 0));
 
-	MakeButton(Stick, Vec3<float>(475, 310, 0), Vec3<float>(50, 150, 0), "assets/cube.png");
+	MakeCollider(Stick, Vec3<float>(475, 310, 0), Vec3<float>(50, 150, 0));
 
 	font = TTF_OpenFont("assets/PressStart2P-Regular.ttf", 48);
 
@@ -65,8 +65,6 @@ void PonkoEnv::Gameplay::Render()
 	SDL_SetRenderDrawColor(render, 55, 55, 55, 255);
 
 	TextureManager::Get().SimpleDraw(BG);
-	TextureManager::Get().SimpleDraw(Stick);
-
 	PonkoEnv::TextureManager::Get().TextDraw("Num of Pulls:", font, PK_COLOR_RED, Vec3<float>(160, 55, 0), Vec3<float>(300, 55, 0));
 	PonkoEnv::TextureManager::Get().TextDraw(std::to_string(gs.counter).c_str(), font, PK_COLOR_RED, Vec3<float>(330, 55, 0), Vec3<float>(50, 55, 0));
 
