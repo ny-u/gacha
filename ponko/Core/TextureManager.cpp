@@ -50,3 +50,16 @@ void PonkoEnv::TextureManager::SimpleDraw(Entity& _entity)
 
 	SimpleDraw(_entity.getComponent<RenderComp>().m_texture, _entity.getComponent<TransformComp>().m_pos, _entity.getComponent<RenderComp>().m_widheight);
 }
+
+void PonkoEnv::TextureManager::TextDraw(const char* _text, TTF_Font* _font, SDL_Color _textColor, Vec3<float> _pos, Vec3<float> _dime)
+{
+	SDL_Renderer* rend = PonkoEnv::PK_Window::Get().GetSDLRender();
+
+	SDL_Surface* textSurface = TTF_RenderText_Solid(_font, _text, _textColor);
+	SDL_Texture* texture = SDL_CreateTextureFromSurface(rend, textSurface);
+	SDL_FreeSurface(textSurface);
+
+	SimpleDraw(texture, _pos, _dime);
+}
+
+

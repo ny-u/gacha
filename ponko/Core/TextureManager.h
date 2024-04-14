@@ -27,8 +27,13 @@ namespace PonkoEnv
 		void SimpleDraw(SDL_Texture* _tex, Vec3<float> _pos, Vec3<float> _dime);
 		void SimpleDraw(Entity& _entity);
 
+		// Fonts
+		void TextDraw(const char* _text, TTF_Font* _font, SDL_Color _textColor, Vec3<float> _pos, Vec3<float> _dime);
+
 	private:
 		TextureManager() {};
+
+
 
 	};
 }

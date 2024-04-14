@@ -112,10 +112,12 @@ xcopy "$(SolutionDir)vendor\SDL2\SDL2_x64\SDL2_ttf.dll" "$(TargetDir)" /y</Comma
     <ClCompile Include="Core\Window.cpp" />
     <ClCompile Include="ECS\ECS.cpp" />
     <ClCompile Include="ECS\EntityFactory.cpp" />
+    <ClCompile Include="Gameplay\Gacha.cpp" />
     <ClCompile Include="GameState\GameStateManager.cpp" />
     <ClCompile Include="GameState\Scenes\Gameplay.cpp" />
     <ClCompile Include="GameState\Scenes\MainMenu.cpp" />
     <ClCompile Include="GameState\Scenes\SplashScreen.cpp" />
+    <ClCompile Include="GameState\Scenes\WinScreen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -137,11 +139,13 @@ xcopy "$(SolutionDir)vendor\SDL2\SDL2_x64\SDL2_ttf.dll" "$(TargetDir)" /y</Comma
     <ClInclude Include="ECS\Components\TransformComp.h" />
     <ClInclude Include="ECS\ECS.h" />
     <ClInclude Include="ECS\EntityFactory.h" />
+    <ClInclude Include="Gameplay\Gacha.h" />
     <ClInclude Include="GameState\Scenes\AllScenes.h" />
     <ClInclude Include="GameState\Scenes\BaseScene.h" />
     <ClInclude Include="GameState\GameStateManager.h" />
     <ClInclude Include="GameState\Scenes\Gameplay.h" />
     <ClInclude Include="GameState\Scenes\MainMenu.h" />
+    <ClInclude Include="GameState\Scenes\WinScreen.h" />
     <ClInclude Include="pch.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>

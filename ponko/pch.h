@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <bitset>
 #include <array>
+#include <random>
 
 // SDL2
 #include "SDL.h"
@@ -32,6 +33,8 @@
 // ECS - Utils
 #include "ECS/EntityFactory.h"
 
-
 // GSM
 #include "GameState/GameStateManager.h"
+
+// Gameplay
+#include "Gameplay/Gacha.h"

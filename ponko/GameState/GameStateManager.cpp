@@ -85,7 +85,7 @@ void PonkoEnv::GameStateManager::Terminate()
 
 void PonkoEnv::GameStateManager::SetNextScene(GSM_STATES _state) // this is horrible i think?
 {
-	delete GameStateManager::ScenePtr(); // dis line
+	delete GameStateManager::ScenePtr(); // dis line // doesnt seem to work +.= nani // else why is counter not resenting? // unless its global
 	switch (_state)
 	{
 	case SCENE_SPLASHSCREEN:
@@ -103,6 +103,10 @@ void PonkoEnv::GameStateManager::SetNextScene(GSM_STATES _state) // this is horr
 	case SCENE_GAMEPLAY:
 		GameStateManager::ScenePtr() = new Gameplay;
 		SetCurrent() = SCENE_GAMEPLAY;
+		break;
+	case SCENE_WINSCREEN:
+		GameStateManager::ScenePtr() = new WinScreen;
+		SetCurrent() = SCENE_WINSCREEN;
 		break;
 	default:
 		break;
