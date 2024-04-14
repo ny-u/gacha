@@ -39,3 +39,9 @@ void PonkoEnv::PK_Window::ConstructWindow(const char* _title,
 
 	m_render = SDL_CreateRenderer(sdl_Window, -1, 0);
 }
+
+PonkoEnv::PK_Window::~PK_Window()
+{
+	SDL_DestroyWindow(sdl_Window);
+	SDL_DestroyRenderer(m_render);
+}

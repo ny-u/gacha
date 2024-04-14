@@ -13,6 +13,10 @@
 
 struct TransformComp : public Component
 {
+	TransformComp() {}
+	TransformComp(Vec3<float> _pos) : m_pos(_pos) {}
+
+
 	Vec3<float>		m_pos{};
 	float			rotate{};
 };

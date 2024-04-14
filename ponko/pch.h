@@ -29,6 +29,8 @@
 // ECS
 #include "ECS/ECS.h"
 #include "ECS/Components/allComps.h"
+// ECS - Utils
+#include "ECS/EntityFactory.h"
 
 
 // GSM

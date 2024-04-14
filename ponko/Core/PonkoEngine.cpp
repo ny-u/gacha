@@ -10,11 +10,14 @@
 #include "GameState/GameStateManager.h"
 SDL_Window* window{};
 
+#include "SDL_ttf.h"
+
 namespace PonkoEnv
 {
 	void PonkoEngine::Init()
 	{
 		SDL_Init(SDL_INIT_EVERYTHING);
+		TTF_Init();
 		GameStateManager::Init();
 
 		// Create Window
@@ -31,6 +34,8 @@ namespace PonkoEnv
 	void PonkoEngine::Terminate()
 	{
 		GameStateManager::Terminate();
+		TTF_Quit();
+		SDL_Quit();
 	}
 }
 

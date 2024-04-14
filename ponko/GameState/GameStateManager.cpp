@@ -18,12 +18,12 @@ PonkoEnv::GameStateManager& PonkoEnv::GameStateManager::Get()
 void PonkoEnv::GameStateManager::Init()
 {
 	// Init Scene
-	GSM_STATES StartScene			= SCENE_SPLASHSCREEN;
+	GSM_STATES StartScene			= SCENE_MAINMENU;
 	GameStateManager::SetCurrent()  = GameStateManager::SetPrevious()
 									= GameStateManager::SetNext()
 									= StartScene;
 
-	GameStateManager::ScenePtr() = new SplashScreenScene;
+	GameStateManager::ScenePtr() = new MainMenu;
 
 
 }
@@ -56,8 +56,12 @@ void PonkoEnv::GameStateManager::Update()
 				GameStateManager::Quit();
 
 			// Scene Loop
-			GameStateManager::ScenePtr()->Update();
+
+			// Need to figure out why i needed to swap render and update
+			// as the common sense ver makes render call first and update 2nd leading to weird stuff
 			GameStateManager::ScenePtr()->Render();
+			GameStateManager::ScenePtr()->Update();
+			EntityManager::Get().CleanUp();
 
 			PonkoEnv::FPSController::Get().End(); // End of FPS Controller
 
@@ -86,9 +90,19 @@ void PonkoEnv::GameStateManager::SetNextScene(GSM_STATES _state) // this is horr
 	{
 	case SCENE_SPLASHSCREEN:
 		GameStateManager::ScenePtr() = new SplashScreenScene;
+		SetCurrent() = SCENE_SPLASHSCREEN;
 		break;
 	case SCENE_TEST:
 		GameStateManager::ScenePtr() = new TestScene;
+		SetCurrent() = SCENE_TEST;
+		break;
+	case SCENE_MAINMENU:
+		GameStateManager::ScenePtr() = new MainMenu;
+		SetCurrent() = SCENE_MAINMENU;
+		break;
+	case SCENE_GAMEPLAY:
+		GameStateManager::ScenePtr() = new Gameplay;
+		SetCurrent() = SCENE_GAMEPLAY;
 		break;
 	default:
 		break;

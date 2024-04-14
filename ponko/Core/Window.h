@@ -26,6 +26,7 @@
 
 		private:
 			PK_Window() {};
+			~PK_Window();
 
 			const char*		m_windowTitle{};
 			int				m_windowWidth{};

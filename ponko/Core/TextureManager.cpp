@@ -33,10 +33,10 @@ void PonkoEnv::TextureManager::Draw(SDL_Texture* _tex, SDL_Rect _srcRect,SDL_Rec
 
 void PonkoEnv::TextureManager::SimpleDraw(SDL_Texture* _tex, Vec3<float> _pos, Vec3<float> _dime)
 {
-	int drawX = static_cast<int>(_pos.x - _dime.x / 4); 
-	int drawY = static_cast<int>(_pos.y - _dime.y / 4); 
+	int drawX = static_cast<int>(_pos.x - _dime.x / 2); 
+	int drawY = static_cast<int>(_pos.y - _dime.y / 2); 
 
-	SDL_Rect dstRect	= { drawX, drawY, static_cast<int>(_dime.x / 2), static_cast<int>(_dime.y / 2) };
+	SDL_Rect dstRect	= { drawX, drawY, static_cast<int>(_dime.x ), static_cast<int>(_dime.y) };
 	SDL_Renderer* rend	= PonkoEnv::PK_Window::Get().GetSDLRender();
 
 	SDL_RenderCopy(rend, _tex, NULL, &dstRect);
